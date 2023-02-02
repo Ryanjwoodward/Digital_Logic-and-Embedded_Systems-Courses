@@ -1,0 +1,19 @@
+-- Basic Circuit Constructed Using the Data Flow Model
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY or_and IS
+	PORT(
+		a : IN STD_LOGIC;
+		b : IN STD_LOGIC;
+		c : IN STD_LOGIC;
+		e : OUT STD_LOGIC
+	);
+END or_and;
+
+ARCHITECTURE or_and_data_flow;
+	OF or_and IS
+		BEGIN
+			e <= (a OR B) AND c;
+END or_and_data_flow;

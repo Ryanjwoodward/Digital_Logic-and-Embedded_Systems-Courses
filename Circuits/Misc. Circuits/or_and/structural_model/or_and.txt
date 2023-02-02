@@ -1,0 +1,37 @@
+-- Basic Circuit built using a stuctural model
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY or_and IS
+	PORT(
+		a : IN STD_LOGIC;
+		b : IN STD_LOGIC;
+		c : IN STD_LOGIC;
+		e : OUT STD_LOGIC
+	);
+END or_and;
+
+ARCHITECTURE or_and_structural OF or_and IS
+		COMPONENT or_gate IS
+			PORT(
+				a : IN STD_LOGIC;
+				b : IN STD_LOGIC;
+				c : OUT STD_LOGIC
+			);
+		END COMPONENT;
+	
+		COMPONENT and_gate IS
+			PORT(
+				a : IN STD_LOGIC;
+				b : IN STD_LOGIC;
+				c : OUT STD_LOGIC
+			);
+		END COMPONENT;
+		
+		
+	SIGNAL wire1 : STD_LOGIC;
+		BEGIN
+			 OR1 : or_gate PORT MAP(a, b, wire1);
+			 AND1 : and_gate PORT MAP(wire1, c, e);
+END or_and_structural;		
