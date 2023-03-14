@@ -30,3 +30,4 @@ BEGIN
 				FA3 : full_adder PORT MAP(a(3), b(3), c3, sum(3), c4);
 				cout <= c4;
 END behavior;	
+
