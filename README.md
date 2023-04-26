@@ -40,5 +40,5 @@ The Projects for each Lab are:
       
 
 ### 4.) Circuits
-> List the labs and make them so users can click them to navigate to the section they are located
+> This Section of the repository contains all the circuits I have written using hardware description languages such as **Verilog** or **VHDL**. These circuits have been written for projects and courses i've taken. These circuits inlude Adders, Multiplexers, Decoders, Counters, Flip-Flops, and many others.
 
