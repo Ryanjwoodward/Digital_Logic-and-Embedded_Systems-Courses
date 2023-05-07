@@ -1,11 +1,25 @@
-module lab1_part3(input u, v, w, x, sel0, sel1, output m);
+module lab1_part3 (
+	input [1:0] u,
+	input [1:0] v,
+	input [1:0] w,
+	input [1:0] x,
+	input [1:0] s,
+	output reg [1:0] m
+);
 
-	wire c1, c2, c3;
-	
-		two_one_mux mux1(u, v, sel0, c1);
-		two_one_mux mux2(w, x, sel0, c2);
-		two_one_mux mux3(c1, c2, sel1, c3);
-		
-	
-		assign m = c3;
-endmodule		
+always @ (s) begin
+	case (s)
+		2'b00:
+			m <= u;
+		2'b01:
+			m <= v;
+		2'b10:
+			m <= w;
+		2'b11:
+			m <= x;
+		default:
+			m <= 2'b00;
+	endcase
+end
+
+endmodule
