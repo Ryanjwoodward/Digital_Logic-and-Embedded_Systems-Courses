@@ -16,8 +16,8 @@ BEGIN
 					WHEN '0' => -- x0
 						seven_seg_out  <= not "0111111" ;
 
-					WHEN OTHERS =>
-						seven_seg_out  <= not "0111111" ;
+					WHEN OTHERS => --1
+						seven_seg_out  <= not "0000110" ;
 				END CASE;
 		END PROCESS;
 END Behavioral;

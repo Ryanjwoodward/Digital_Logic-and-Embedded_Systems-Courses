@@ -12,4 +12,4 @@ ARCHITECTURE dataflow OF four_bit_comparator IS
 	
 	BEGIN
 			Z <= (V(3) AND V(1)) OR (V(3) AND V(2));
-END dataflow;			
+END dataflow;		
