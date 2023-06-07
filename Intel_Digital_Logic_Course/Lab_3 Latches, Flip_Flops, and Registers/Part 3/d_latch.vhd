@@ -1,0 +1,24 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY d_latch IS
+	PORT(
+			D		:	IN STD_LOGIC;
+			Clk		:  IN STD_LOGIC;
+			Q		:	OUT STD_LOGIC;
+			Qb		:	OUT STD_LOGIC
+	);
+END ENTITY;
+
+
+ARCHITECTURE dataflow OF d_latch IS
+
+	BEGIN
+			PROCESS(D, Clk)
+				BEGIN
+						IF Clk = '1' THEN
+							Q	<= D;
+							Qb	<= NOT D;
+						END IF;
+			END PROCESS;
+END ARCHITECTURE;

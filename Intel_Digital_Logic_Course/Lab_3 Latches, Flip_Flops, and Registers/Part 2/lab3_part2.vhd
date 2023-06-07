@@ -1,0 +1,24 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY lab3_part2 IS
+	PORT(
+			D		:	IN STD_LOGIC;
+			Clk		:  IN STD_LOGIC;
+			Q		:	OUT STD_LOGIC;
+			Qb		:	OUT STD_LOGIC
+	);
+END ENTITY;
+
+
+ARCHITECTURE dataflow OF lab3_part2 IS
+
+	BEGIN
+			PROCESS(D, Clk)
+				BEGIN
+						IF Clk = '1' THEN
+							Q	<= D;
+							Qb	<= NOT D;
+						END IF;
+			END PROCESS;
+END ARCHITECTURE;

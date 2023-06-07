@@ -1,0 +1,30 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY t_flipflop IS
+	PORT(
+		T   : IN  STD_LOGIC;
+		CLK : IN  STD_LOGIC;
+		RST : IN  STD_LOGIC;
+		Q   : OUT STD_LOGIC;
+		Qb  : OUT STD_LOGIC
+	);
+END ENTITY;
+
+ARCHITECTURE rtl OF t_flipflop IS
+	SIGNAL i : STD_LOGIC;
+BEGIN
+	PROCESS (CLK, RST)
+	BEGIN
+		IF RST = '1' THEN
+			i <= '0';
+		ELSIF CLK'event AND CLK = '1' THEN
+			IF T = '0' THEN
+				i <= NOT i;
+			END IF;
+		END IF;
+	END PROCESS;
+	
+	Q  <= i;
+	Qb <= NOT i;
+END ARCHITECTURE;
